@@ -5,7 +5,9 @@ import './card-list.styles.scss';
 export const CardList = props => (
     <div className='card-list'>
         {props.programs.map( program => (
-            <Card key = { program.id } program = { program } />
-          ))}
+            <Card program={program} name={program.name}/>
+        )
+            
+          )}
     </div>
 );

@@ -1,6 +1,5 @@
 import React from 'react';
-import { CardList } from './components/card-list/card-list.component';
-import { SearchBox } from './components/search-box/search-box.component';
+import {ChannelList} from './components/channel-list/channel-list.component';
 
 import './App.css';
 
@@ -10,16 +9,17 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      programs: [],
+      channels: [],
       searchField: '',
       title: ''
     };
   }
 
-  componentDidMount() {
-    fetch('https://rest-api.elisaviihde.fi/rest/epg/schedule/live')
-    .then(response => response.json())
-    .then(data => this.setState({ programs: data.schedule[0].programs }));
+  async componentDidMount() {
+    let response = await fetch('https://rest-api.elisaviihde.fi/rest/epg/schedule/live')
+    let data = await response.json();
+
+    this.setState({ channels: data.schedule });
   }
 
   onSearchChange = event => {
@@ -30,17 +30,28 @@ class App extends React.Component {
     this.setState({ searchField: e.target.value });
   }
 
-
-  render(){
-    const { programs, searchField } = this.state;
-    const filteredPrograms = programs.filter(program => program.name.toLowerCase().includes(searchField.toLocaleLowerCase()));
-
+  resolveData( data ) {
+    console.log( data );
+  }
+  
+  
+  renderChannels() {
+    const { channels, searchField } = this.state;
+      const filteredPrograms = channels;
     return (
       <div className="App">
-        <h1>Search programs</h1>
-        <SearchBox placeholder='search programs' handleChange={this.handleChange}/>
-        <CardList programs = {filteredPrograms} />
+        <ChannelList channels = {filteredPrograms} />
       </div>
+      
+    );
+  }
+
+
+  render(){
+   
+  
+    return (
+      this.state.channels.length ? this.renderChannels() : ''
     )
 
   }
