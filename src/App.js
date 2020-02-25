@@ -3,44 +3,51 @@ import {ChannelList} from './components/channel-list/channel-list.component';
 
 import './App.css';
 
-
-
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      channels: [],
-      searchField: '',
+      channelsLogos: [],
+      channelsPrograms: [],
       title: ''
     };
   }
 
   async componentDidMount() {
+    
+    let channelsLogos = await this.getChannelsLogos();
+    this.setState({ channelsLogos: channelsLogos });
+    
+    let liveChannels = await this.getLivePrograms();
+    
+  }
+
+  async getLivePrograms() {
     let response = await fetch('https://rest-api.elisaviihde.fi/rest/epg/schedule/live')
     let data = await response.json();
 
-    this.setState({ channels: data.schedule });
+    this.setState({ channelsPrograms: data.schedule });
   }
 
-  onSearchChange = event => {
-    this.setState({ searchField: event.target.value, title: event.target });
-  };
+  async getChannelsLogos() {
+    let response = await fetch('https://rest-api.elisaviihde.fi/rest/epg/channels')
+    let data = await response.json();
 
-  handleChange = (e) => {
-    this.setState({ searchField: e.target.value });
-  }
+    let channelsLogos = {};
+    data.channels.forEach(channel => {
+      channelsLogos[channel.id] = channel.logos[7].url
+    });
+    return channelsLogos;
+    
+    
 
-  resolveData( data ) {
-    console.log( data );
   }
   
   
   renderChannels() {
-    const { channels, searchField } = this.state;
-      const filteredPrograms = channels;
     return (
       <div className="App">
-        <ChannelList channels = {filteredPrograms} />
+        <ChannelList channelsPrograms={this.state.channelsPrograms} channelsLogos={this.state.channelsLogos}/>
       </div>
       
     );
@@ -51,7 +58,7 @@ class App extends React.Component {
    
   
     return (
-      this.state.channels.length ? this.renderChannels() : ''
+      this.state.channelsPrograms.length ? this.renderChannels() : 'Loading...'
     )
 
   }
