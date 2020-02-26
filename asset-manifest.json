@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/EvaBroberg/ElisaViihde/static/css/main.4c8a9a38.chunk.css",
-    "main.js": "/EvaBroberg/ElisaViihde/static/js/main.15b70984.chunk.js",
-    "main.js.map": "/EvaBroberg/ElisaViihde/static/js/main.15b70984.chunk.js.map",
-    "runtime-main.js": "/EvaBroberg/ElisaViihde/static/js/runtime-main.400077f3.js",
-    "runtime-main.js.map": "/EvaBroberg/ElisaViihde/static/js/runtime-main.400077f3.js.map",
-    "static/js/2.3e1f6554.chunk.js": "/EvaBroberg/ElisaViihde/static/js/2.3e1f6554.chunk.js",
-    "static/js/2.3e1f6554.chunk.js.map": "/EvaBroberg/ElisaViihde/static/js/2.3e1f6554.chunk.js.map",
-    "index.html": "/EvaBroberg/ElisaViihde/index.html",
-    "precache-manifest.66bb9857a8db6c5ad0740db4900efe63.js": "/EvaBroberg/ElisaViihde/precache-manifest.66bb9857a8db6c5ad0740db4900efe63.js",
-    "service-worker.js": "/EvaBroberg/ElisaViihde/service-worker.js",
-    "static/css/main.4c8a9a38.chunk.css.map": "/EvaBroberg/ElisaViihde/static/css/main.4c8a9a38.chunk.css.map",
-    "static/js/2.3e1f6554.chunk.js.LICENSE.txt": "/EvaBroberg/ElisaViihde/static/js/2.3e1f6554.chunk.js.LICENSE.txt"
+    "main.css": "/ElisaViihde/static/css/main.4c8a9a38.chunk.css",
+    "main.js": "/ElisaViihde/static/js/main.0f947dd7.chunk.js",
+    "main.js.map": "/ElisaViihde/static/js/main.0f947dd7.chunk.js.map",
+    "runtime-main.js": "/ElisaViihde/static/js/runtime-main.fe232dc8.js",
+    "runtime-main.js.map": "/ElisaViihde/static/js/runtime-main.fe232dc8.js.map",
+    "static/js/2.3e1f6554.chunk.js": "/ElisaViihde/static/js/2.3e1f6554.chunk.js",
+    "static/js/2.3e1f6554.chunk.js.map": "/ElisaViihde/static/js/2.3e1f6554.chunk.js.map",
+    "index.html": "/ElisaViihde/index.html",
+    "precache-manifest.bb89acc5db87748e64d4fb742b165105.js": "/ElisaViihde/precache-manifest.bb89acc5db87748e64d4fb742b165105.js",
+    "service-worker.js": "/ElisaViihde/service-worker.js",
+    "static/css/main.4c8a9a38.chunk.css.map": "/ElisaViihde/static/css/main.4c8a9a38.chunk.css.map",
+    "static/js/2.3e1f6554.chunk.js.LICENSE.txt": "/ElisaViihde/static/js/2.3e1f6554.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.400077f3.js",
+    "static/js/runtime-main.fe232dc8.js",
     "static/js/2.3e1f6554.chunk.js",
     "static/css/main.4c8a9a38.chunk.css",
-    "static/js/main.15b70984.chunk.js"
+    "static/js/main.0f947dd7.chunk.js"
   ]
 }
